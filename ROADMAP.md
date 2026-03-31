@@ -10,6 +10,24 @@ This system is in active daily use. The current priority is sustained real-world
 
 The current flat-file approach (YAML + Markdown) optimizes for human readability and simplicity. As historical data accumulates, this may not scale well for the kind of pattern analysis and trend surfacing the system aspires to. A local indexed database (e.g., SQLite) could enable richer agent-driven insights across weeks and months of data. The plan is to let real usage reveal the pain points before committing to a migration.
 
+### Structured Tracking Data
+
+Currently, skills write tracking data (check-in logs, `current.yaml`, weekly plans, and the upcoming `coverage.yaml` from `/family-edu`) as freeform files — the LLM decides the shape on each write. This works but is fragile across sessions: schema drift, inconsistent field names, missing data, and wasted tokens re-reading large files are all real risks as usage accumulates.
+
+The education standards pipeline (`feature/family-edu`) proved a pattern that should generalize to all tracking data:
+
+1. **Schema definitions** — explicit, validated structure for every data file the system writes. Not just conventions in the skill prompt, but schemas that can be checked programmatically. Applies to `current.yaml`, checkin logs, weekly plans, and `coverage.yaml`.
+2. **Validation on write** — after any skill writes or updates tracking data, validate against the schema before the session ends. Catches drift immediately instead of compounding across sessions.
+3. **Summaries for efficient reads** — auto-generated summary files (like `summary.md` for standards) that give skills a quick snapshot without reading full data files. Regenerated after each validated write. Reduces token cost and improves reliability.
+
+This is a cross-cutting concern that touches all skills, not just `/family-edu`. The approach:
+- Define schemas (likely as Python dataclasses or YAML schema specs, reusing the `ingest-standards` validation pattern)
+- Add a shared validation step that any skill can invoke post-write
+- Generate summary snapshots per data domain (education, household state, weekly plan)
+- Migrate existing data files to conform, updating skills as we go
+
+**Relationship to DB evaluation**: This is a stepping stone. Structured, validated flat files are easier to migrate to a database later — the schema is already defined, validation is proven, and the summary layer maps naturally to materialized views.
+
 ## Future Considerations
 
 ### Onboarding Improvements
