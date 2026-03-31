@@ -26,10 +26,22 @@ Research conducted 2026-03-31. Standards refresh every 5-7 years per subject; an
 
 | Source | Format | Auth | License | Coverage | 2023 Data |
 |--------|--------|------|---------|----------|-----------|
-| **IDOE PDFs** | PDF | None | Public domain (govt) | All subjects, all grades | Yes — all 4 core subjects |
-| **OpenSALT API** | CASE JSON | None | Public domain (govt data) | Limited — 3 IN frameworks via API | Math 2023 only (ELA/Science/SS visible on web UI but not in API) |
-| **CSP API** | JSON | None | CC BY 3.0 | All subjects, all grades | No — only 2014-2020 vintage |
+| **IDOE PDFs** | PDF | None | See note below | All subjects, all grades | Yes — all 4 core subjects |
+| **OpenSALT API** | CASE JSON | None | MIT (software), public data | Limited — 3 IN frameworks via API | Math 2023 only (ELA/Science/SS visible on web UI but not in API) |
+| **CSP API** | JSON | None | CC BY 3.0 (data from ASN) | All subjects, all grades | No — only 2014-2020 vintage |
 | **ASN (D2L)** | JSON | Borrowed widget key | Unclear | Partial | ELA 2023 K-12; Math only 2020 for K-8 |
+
+### Terms of Use and Rate Limits
+
+Researched 2026-03-31.
+
+**OpenSALT**: No ToS, no documented rate limits, no rate-limit headers in responses, robots.txt is empty. MIT-licensed open source software hosting public education standards data. No restrictions on data retrieval or redistribution found.
+
+**CSP**: No ToS page. Apache 2.0 software, CC BY 3.0 licensed data (sourced from ASN — attribution to Desire2Learn Incorporated). No documented rate limits. Formally requires API key signup, but read endpoints work without one.
+
+**IDOE PDFs**: The `media.doe.in.gov` robots.txt disallows all automated crawling (`Disallow: /`). The in.gov Terms of Use is restrictive boilerplate: "redistribution, use or publication...is strictly prohibited," with a carve-out for exceptions under Indiana law including the Access to Public Records Law. These are public education standards adopted by the State Board and published for use by every school, parent, and educator in Indiana. Our approach: download PDFs via direct URLs (not spidering), with courtesy delays, using an identifying User-Agent. For committed data, we prefer OpenSALT-sourced data (no restrictions) and note provenance clearly.
+
+**Pipeline policy**: All HTTP requests include an identifying `User-Agent` header. Courtesy delays between requests. We make ~25 total API/download requests for a full K-5 ingestion — this is de minimis.
 
 ### Source URLs
 
