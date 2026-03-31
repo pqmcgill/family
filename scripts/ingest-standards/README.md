@@ -13,20 +13,37 @@ cd scripts/ingest-standards
 uv sync
 ```
 
-## Run
+## Commands
 
 ```sh
-# Ingest Math K-5 from OpenSALT → standards/indiana/
-uv run ingest-standards
+# Ingest Math K-5 from OpenSALT API → standards/indiana/
+uv run ingest-standards ingest
 
-# Custom output directory
-uv run ingest-standards /path/to/output
+# Validate all YAML files against the schema
+uv run ingest-standards validate
+
+# Print the extraction prompt for a subject (for Claude-assisted PDF parsing)
+uv run ingest-standards prompt ela
+uv run ingest-standards prompt science
+uv run ingest-standards prompt social_studies
 ```
+
+## PDF Extraction Workflow
+
+ELA, Science, and Social Studies are extracted from IDOE PDFs using Claude. The prompts are stored in `src/ingest_standards/prompts/` for repeatability.
+
+1. Download PDFs: `cache/` directory (gitignored)
+2. Print the prompt: `uv run ingest-standards prompt <subject>`
+3. Give Claude the prompt + PDF, collect the YAML output
+4. Save to `standards/indiana/<subject>-<grade>.yaml`
+5. Validate: `uv run ingest-standards validate`
+
+The generated ELA/Science/Social Studies YAML files are gitignored (IDOE ToS restricts redistribution). Math YAML is committed (sourced from OpenSALT, no restrictions).
 
 ## Test
 
 ```sh
-# Unit tests
+# Unit tests (30 tests)
 uv run pytest -v
 
 # Include live API integration tests (requires network)
