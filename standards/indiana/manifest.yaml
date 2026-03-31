@@ -6,16 +6,35 @@ versions:
 - '2023'
 standard_counts:
   math:
+    K: 15
     '1': 15
     '2': 20
     '3': 24
     '4': 25
     '5': 23
-    K: 15
 validation_results:
+  # Automated structural checks (from validator)
   no_duplicates: pass
   code_format: pass
   domain_coverage: pass
   hierarchy: pass
   essential_present: pass
   standard_counts: pass
+  # Manual cross-source validation (OpenSALT vs IDOE PDF)
+  pdf_cross_validation:
+    status: pass
+    date: '2026-03-31'
+    method: manual visual comparison of all 6 IDOE Math K-5 PDFs against generated YAML
+    checks:
+      count_match: "All 6 grades: K=15, 1=15, 2=20, 3=24, 4=25, 5=23 — exact match"
+      code_match: "All standard codes (K.NS.1 through 5.DA.2) present in both sources"
+      domain_coverage: "All 5 domains (NS, CA, G, M, DA) present for every grade in both sources"
+      description_text: "Spot-checked 7 standards across K-5 — descriptions verbatim match"
+      essential_flags: "Spot-checked essential/non-essential standards — all match"
+    pdf_urls:
+      - https://media.doe.in.gov/standards/indiana-academic-standards-kindergarten-mathematics.pdf
+      - https://media.doe.in.gov/standards/indiana-academic-standards-grade-1-mathematics.pdf
+      - https://media.doe.in.gov/standards/indiana-academic-standards-grade-2-mathematics.pdf
+      - https://media.doe.in.gov/standards/indiana-academic-standards-grade-3-mathematics.pdf
+      - https://media.doe.in.gov/standards/indiana-academic-standards-grade-4-mathematics.pdf
+      - https://media.doe.in.gov/standards/indiana-academic-standards-grade-5-mathematics.pdf

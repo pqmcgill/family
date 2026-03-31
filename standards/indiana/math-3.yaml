@@ -4,6 +4,7 @@ version: '2023'
 source:
   primary: opensalt
   primary_url: https://opensalt.net/ims/case/v1p0/CFPackages/76673c2e-5cb6-11ee-a3bc-0242c0a84002
+  verified_against: IDOE PDF
   last_verified: '2026-03-31'
 standard_count: 24
 domains:
