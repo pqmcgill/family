@@ -8,3 +8,10 @@ __pycache__/
 *.egg-info/
 dist/
 .pytest_cache/
+
+# Standards derived from IDOE PDFs (ToS restricts redistribution)
+# Math YAML is committed (sourced from OpenSALT, no restrictions)
+# Run `uv run ingest-standards` to generate these locally
+standards/indiana/ela-*.yaml
+standards/indiana/science-*.yaml
+standards/indiana/social-studies-*.yaml
