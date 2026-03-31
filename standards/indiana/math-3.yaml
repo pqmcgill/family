@@ -1,0 +1,166 @@
+subject: math
+grade: '3'
+version: '2023'
+source:
+  primary: opensalt
+  primary_url: https://opensalt.net/ims/case/v1p0/CFPackages/76673c2e-5cb6-11ee-a3bc-0242c0a84002
+  last_verified: '2026-03-31'
+standard_count: 24
+domains:
+  CA:
+    name: Computation and Algebraic Thinking
+    learning_outcome: Students use modeling and conceptual strategies to multiply
+      and divide numbers within 100 in real-world situations. Students apply concepts
+      and strategies of addition and subtraction to solve real-world problems and
+      investigate number patterns through the application of concepts of multiplication
+      and more complex concepts of addition within 100.
+    standards:
+      3.CA.1:
+        description: Fluently add and subtract multi-digit whole numbers using strategies
+          and algorithms based on place value, properties of operations, and relationships
+          between addition and subtraction.
+        essential: false
+      3.CA.2:
+        description: Solve real-world problems involving addition and subtraction
+          of multi-digit whole numbers (e.g., by using drawings and equations with
+          a symbol for the unknown number to represent the problem).
+        essential: true
+      3.CA.3:
+        description: Model the concept of multiplication of whole numbers using equal-sized
+          groups, arrays, area models, and equal intervals on a number line. Model
+          the properties of 0 and 1 in multiplication using objects or drawings.
+        essential: true
+      3.CA.4:
+        description: 'Model the concept of division of whole numbers with the following
+          models: partitioning, sharing, and an inverse of multiplication. Model the
+          properties of 0 and 1 in division using objects or drawings.'
+        essential: true
+      3.CA.5:
+        description: Multiply and divide within 100 using strategies such as the relationship
+          between multiplication and division (e.g., knowing that 8 x 5 = 40, one
+          knows 40 ÷ 5 = 8) or properties of operations.
+        essential: true
+      3.CA.6:
+        description: Demonstrate fluency with mastery of multiplication facts and
+          corresponding division facts of 0 to 10.
+        essential: false
+      3.CA.7:
+        description: Solve real-world problems involving whole number multiplication
+          and division within 100 in situations involving equal groups, arrays, and
+          measurement quantities (e.g., by using drawings and equations with a symbol
+          for the unknown number to represent the problem).
+        essential: true
+      3.CA.8:
+        description: Create, extend, and give an appropriate rule for number patterns
+          within 100 (including patterns in the addition table or multiplication table).
+        essential: false
+  DA:
+    name: Data Analysis
+    learning_outcome: Students collect and present data in multiple manners and solve
+      multi-step problems with the data.
+    standards:
+      3.DA.1:
+        description: Collect, organize, and graph data from observations, surveys,
+          and experiments using scaled bar graphs and pictographs. Solve real-world
+          problems by analyzing and interpreting the data using grade-level computation
+          and comparison strategies.
+        essential: true
+  G:
+    name: Geometry
+    learning_outcome: Students continue to investigate and classify more complex two-dimensional
+      shapes based on their attributes.
+    standards:
+      3.G.1:
+        description: Define, identify, and classify four-sided shapes such as rhombuses,
+          rectangles, and squares as quadrilaterals. Identify and draw examples and
+          non-examples of quadrilaterals.
+        essential: false
+      3.G.2:
+        description: Identify, describe, and draw points, lines, and line segments
+          using appropriate tools (e.g., ruler, straightedge, and technology), and
+          use these terms when describing two-dimensional shapes.
+        essential: false
+      3.G.3:
+        description: Partition shapes into parts with equal areas. Express the area
+          of each part as a unit fraction of the whole (i.e., 1/2, 1/3, 1/4, 1/6,
+          1/8).
+        essential: false
+  M:
+    name: Measurement
+    learning_outcome: Students use appropriate tools, computation strategies, and
+      relationships of measurement to solve real-world problems including more specific
+      measurements of length, weight, temperature, mass, time, and money. Students
+      investigate and model the area of rectangles and perimeter of all polygons.
+    standards:
+      3.M.1:
+        description: Estimate and measure the mass of objects in grams (g) and kilograms
+          (kg) and the volume of objects in quarts (qt), gallons (gal), and liters
+          (l). Add, subtract, multiply, or divide to solve one-step, real-world problems
+          involving masses or volumes that are given in the same units or obtained
+          through investigation.
+        essential: true
+      3.M.2:
+        description: Choose and use appropriate units and tools to estimate and measure
+          length, weight, and temperature. Estimate and measure length to a quarter-inch,
+          weight in pounds, and temperature in degrees Celsius and Fahrenheit.
+        essential: false
+      3.M.3:
+        description: Tell and write time to the nearest minute and measure time intervals
+          in minutes. Solve word problems involving addition and subtraction of time
+          intervals in minutes (e.g., by representing the problem on a number line
+          diagram).
+        essential: true
+      3.M.4:
+        description: Find the value of any collection of coins and bills. Write amounts
+          less than a dollar using the ¢ symbol and write larger amounts using the
+          $ symbol in the form of dollars and cents (e.g., $4.59). Solve real-world
+          problems to determine whether there is enough money to make a purchase.
+        essential: true
+      3.M.5:
+        description: Find the area of a rectangle with whole-number side lengths by
+          modeling with unit squares, and show that the area is the same as would
+          be found by multiplying the side lengths. Identify and draw rectangles with
+          the same perimeter and different areas or with the same area and different
+          perimeters.
+        essential: true
+      3.M.6:
+        description: Find perimeters of polygons given the side lengths or given an
+          unknown side length.
+        essential: false
+  NS:
+    name: Number Sense
+    learning_outcome: Students represent and round whole numbers up to 10,000. Students
+      model, compare, and generate simple equivalent unit and non-unit fractions.
+    standards:
+      3.NS.1:
+        description: Read and write whole numbers up to 10,000. Use words, models,
+          standard form, and expanded form to represent and show equivalent forms
+          of whole numbers up to 10,000.
+        essential: false
+      3.NS.2:
+        description: Model unit fractions as the quantity formed by 1 part when a
+          whole is partitioned into equal parts; model non-unit fractions as the quantity
+          formed by iterations of unit fractions. [In grade 3, limit denominators
+          of fractions to 2, 3, 4, 6, 8.]
+        essential: true
+      3.NS.3:
+        description: Model a non-unit fraction on a number line by marking equal lengths
+          from 0, identifying each part as a unit fraction and locating the non-unit
+          fraction as the endpoint on the number line.
+        essential: true
+      3.NS.4:
+        description: Use fraction models to represent two simple equivalent fractions
+          with attention to how the number and size of the parts differ even though
+          the quantities are the same. Use this principle to generate simple equivalent
+          fractions (e.g., 1/2 = 2/4, 4/6 = 2/3).
+        essential: false
+      3.NS.5:
+        description: Compare two fractions with the same numerator or the same denominator
+          by reasoning about their size based on the same whole. Record the results
+          of comparisons with the symbols > , = , or < , and justify the conclusions
+          (e.g., by using a visual fraction model).
+        essential: true
+      3.NS.6:
+        description: Use place value understanding to round two- and three-digit whole
+          numbers to the nearest 10 or 100.
+        essential: false

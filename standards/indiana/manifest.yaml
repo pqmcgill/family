@@ -1,0 +1,21 @@
+schema_version: 1
+last_ingestion: '2026-03-31'
+sources_used:
+- opensalt
+versions:
+- '2023'
+standard_counts:
+  math:
+    '1': 15
+    '2': 20
+    '3': 24
+    '4': 25
+    '5': 23
+    K: 15
+validation_results:
+  no_duplicates: pass
+  code_format: pass
+  domain_coverage: pass
+  hierarchy: pass
+  essential_present: pass
+  standard_counts: pass

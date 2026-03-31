@@ -1,0 +1,181 @@
+subject: math
+grade: '4'
+version: '2023'
+source:
+  primary: opensalt
+  primary_url: https://opensalt.net/ims/case/v1p0/CFPackages/76673c2e-5cb6-11ee-a3bc-0242c0a84002
+  last_verified: '2026-03-31'
+standard_count: 25
+domains:
+  CA:
+    name: Computation and Algebraic Thinking
+    learning_outcome: Students solve real-world problems using place value strategies
+      and properties of multiplication and division with limitations. Students compose
+      (addition) and decompose (subtraction) non-unit fractions and mixed numbers
+      using models and strategies, applying these concepts to real-world situations.
+      Students investigate the relationship between two given sets of numbers and
+      generate number patterns based upon given rules.
+    standards:
+      4.CA.1:
+        description: Multiply a whole number of up to four digits by a one-digit whole
+          number and multiply two two-digit numbers, using strategies based on place
+          value and the properties of operations. Describe the strategy and explain
+          the reasoning.
+        essential: true
+      4.CA.2:
+        description: Find whole-number quotients and remainders with up to four-digit
+          dividends and one-digit divisors using strategies based on place value,
+          the properties of operations, and/or the relationship between multiplication
+          and division. Describe the strategy and explain the reasoning.
+        essential: true
+      4.CA.3:
+        description: Show how the order in which two numbers are multiplied (commutative
+          property) and how numbers are grouped in multiplication (associative property)
+          will not change the product. Use these properties to show that numbers can
+          be multiplied in any order. Investigate and apply the distributive property.
+        essential: true
+      4.CA.4:
+        description: Investigate the mathematical relationship between factors and
+          multiples for whole numbers from 1-100, including the set of factors and
+          multiples for given numbers. Identify sets of factors and multiples for
+          any given whole number up to 100.
+        essential: false
+      4.CA.5:
+        description: Solve real-world problems with whole numbers involving multiplicative
+          comparison (e.g., by using drawings and equations with a symbol for the
+          unknown number to represent the problem), distinguishing multiplicative
+          comparison from additive comparison. [In grade 4, division problems should
+          not include a remainder.]
+        essential: true
+      4.CA.6:
+        description: Add and subtract fractions with common denominators using visual
+          fraction models. Decompose non-unit fractions to represent them as iterations
+          of unit fractions.
+        essential: true
+      4.CA.7:
+        description: Add and subtract mixed numbers with common denominators (e.g.,
+          by replacing each mixed number with an equivalent fraction and/or by using
+          properties of operations and the relationship between addition and subtraction).
+        essential: false
+      4.CA.8:
+        description: Solve real-world problems involving addition and subtraction
+          of fractions referring to the same whole and having common denominators
+          (e.g., by using visual fraction models and equations to represent the problem).
+        essential: true
+      4.CA.9:
+        description: Describe the relationship between two terms and use it to find
+          a second number when a first number is given. Generate a number pattern
+          that follows a given rule.
+        essential: false
+  DA:
+    name: Data Analysis
+    learning_outcome: Students collect and ask questions of the data.
+    standards:
+      4.DA.1:
+        description: Formulate questions that can be addressed with data. Collect,
+          organize, and graph data from observations, surveys, and experiments using
+          line plots with whole number intervals, single- and scaled bar graphs, and
+          frequency tables. Solve real-world problems by analyzing and interpreting
+          the data using grade-level computation and comparison strategies.
+        essential: true
+      4.DA.2:
+        description: Make a line plot to display a data set of measurements in fractions
+          of a unit (1/2, 1/4, 1/8). Solve problems involving addition and subtraction
+          of fractions by using data displayed in line plots.
+        essential: false
+  G:
+    name: Geometry
+    learning_outcome: Students utilize appropriate tools to identify, describe, and
+      draw parallelograms, rhombuses, and trapezoids in addition to classifying two-dimensional
+      shapes.
+    standards:
+      4.G.1:
+        description: Identify, describe, and draw parallelograms, rhombuses, and trapezoids
+          using appropriate tools (e.g., ruler, straightedge, and technology).
+        essential: false
+      4.G.2:
+        description: Identify, describe, and draw rays, angles (right, acute, obtuse),
+          and perpendicular and parallel lines using appropriate tools (e.g., ruler,
+          straightedge, and technology). Identify these in two-dimensional figures.
+        essential: false
+      4.G.3:
+        description: Classify triangles and quadrilaterals based on the presence or
+          absence of parallel or perpendicular lines, or right, acute, or obtuse angles.
+        essential: false
+  M:
+    name: Measurement
+    learning_outcome: Students solve real-world problems involving distance, intervals
+      of time, volumes, masses of objects, and money by applying computation strategies,
+      precise measurement skills, and relationships between systems of measurement.
+      Students continue to apply the concept of area and perimeter to complex shapes
+      to identify solutions.
+    standards:
+      4.M.1:
+        description: Measure length to the nearest quarter-inch, eighth-inch, and
+          millimeter.
+        essential: true
+      4.M.2:
+        description: Within given measurement systems, convert larger units to smaller
+          units, including km, m, cm; kg, g; lb, oz; l, ml; hr, min, sec., and use
+          these conversions to solve real-world problems.
+        essential: true
+      4.M.3:
+        description: Use the four operations to solve real-world problems involving
+          distances, intervals of time, volumes, masses of objects, and money. Include
+          addition and subtraction problems involving simple fractions and problems
+          that require expressing measurements given in a larger unit in terms of
+          a smaller unit.
+        essential: true
+      4.M.4:
+        description: Apply the area and perimeter formulas for rectangles to solve
+          real-world and other mathematical problems. Investigate the area of complex
+          shapes composed of rectangles by decomposing them into non-overlapping rectangles
+          and adding the areas of the non-overlapping parts; apply this technique
+          to solve real-world problems and other mathematical problems.
+        essential: true
+  NS:
+    name: Number Sense
+    learning_outcome: Students represent and round multi-digit numbers. Students model,
+      compare, and generate equivalent fractions, mixed numbers, and decimal numbers
+      to the tenths and hundredths.
+    standards:
+      4.NS.1:
+        description: Read and write whole numbers up to 1,000,000. Use words, models,
+          standard form, and expanded form to represent and show equivalent forms
+          of whole numbers up to 1,000,000.
+        essential: false
+      4.NS.2:
+        description: Model mixed numbers and improper fractions using visual fraction
+          models such as number lines and area models. Use a visual fraction model
+          to show the equivalency between whole numbers and whole numbers as fractions.
+        essential: false
+      4.NS.3:
+        description: Use fraction models to represent two equivalent fractions with
+          attention to how the number and size of the parts differ even though the
+          fractions themselves are the same size. Use this principle to generate equivalent
+          fractions. [In grade 4, limit denominators of fractions to 2, 3, 4, 5, 6,
+          8, 10, 25, 100.]
+        essential: true
+      4.NS.4:
+        description: Compare two fractions with different numerators and different
+          denominators (e.g., by creating common denominators or numerators, or by
+          comparing to a benchmark, such as 0, 1/2, and 1). Explain why comparisons
+          are valid only when the two fractions refer to the same whole. Record the
+          results of comparisons with symbols > , = , or < , and justify the conclusions
+          (e.g., by using a visual fraction model).
+        essential: true
+      4.NS.5:
+        description: Write tenths and hundredths in decimal and fraction notations.
+          Use words, models, standard form, and expanded form to represent decimal
+          numbers to hundredths. Mentally calculate fraction and decimal equivalents
+          for halves and fourths (e.g., 1/2 = 0.5 = 0.50, 7/4 = 1 3/4 = 1.75).
+        essential: true
+      4.NS.6:
+        description: Compare two decimals to hundredths by reasoning about their size
+          based on the same whole. Record the results of comparisons with the symbols
+          > , = , or < , and justify the conclusions (e.g., by using a visual model).
+        essential: true
+      4.NS.7:
+        description: Use place value understanding to round multi-digit whole numbers
+          to any given place value.
+        essential: false
