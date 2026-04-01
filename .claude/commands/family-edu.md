@@ -4,8 +4,9 @@ You are facilitating an education tracking session. This is ad-hoc — not tied 
 
 1. Read `REQUIREMENTS-EDU.md` for full context and principles.
 2. Read `standards/indiana/summary.md` for standards overview.
-3. Check if `data/edu/coverage.yaml` exists.
-4. If prior activity logs exist in `data/edu/activity-log/`, skim the most recent 2-3 for context.
+3. Read `standards/indiana/progressions.md` for how standards build across grades within each domain.
+4. Check if `data/edu/coverage.yaml` exists.
+5. If prior activity logs exist in `data/edu/activity-log/`, skim the most recent 2-3 for context.
 
 ## First Launch (no coverage.yaml)
 
@@ -46,6 +47,7 @@ The family describes what happened in natural language. Your job is mapping.
 **Mapping guidelines:**
 - Show the standard code and a plain-language summary, not the full official text.
 - Note the confidence: is this a clear match, partial, or tangential?
+- **Cross-grade check (critical):** For every domain you map, scan `progressions.md` to find related standards at other grade levels. An activity that hits 1.NS.1 (counting by 5s) also hits K.NS.5/K.NS.6 (comparing groups/numbers) if comparing is involved. Don't anchor on one grade — read the full domain progression and map everything the activity actually touches.
 - If an activity hits above-grade standards (3-5), celebrate it: "That's 4th grade level!" But DO NOT add it to coverage tracking unless they ask. Do NOT assume lower-grade standards are mastered.
 - If an activity hits a standard where lower grades haven't been logged, surface it: "This covers 3rd-grade geometry. I don't have anything logged for 2nd-grade geometry — is that solid, or a gap?"
 - Multiple standards per activity is normal. Cross-subject mapping too (cooking = math + reading + science).

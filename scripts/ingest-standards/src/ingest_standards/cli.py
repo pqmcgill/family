@@ -63,6 +63,14 @@ def cmd_validate(standards_dir: Path) -> None:
         sys.exit(1)
 
 
+def cmd_progressions(standards_dir: Path) -> None:
+    """Generate the vertical articulation / progressions file."""
+    from ingest_standards.progressions import write_progressions
+
+    path = write_progressions(standards_dir)
+    print(f"Written: {path}")
+
+
 def cmd_prompt(subject: str) -> None:
     """Print the extraction prompt for a subject."""
     from ingest_standards.prompts import load_prompt
@@ -74,9 +82,10 @@ def cmd_prompt(subject: str) -> None:
 def main() -> None:
     if len(sys.argv) < 2 or sys.argv[1] in ("-h", "--help"):
         print("Usage:")
-        print("  ingest-standards ingest [output_dir]    Ingest math from OpenSALT")
+        print("  ingest-standards ingest [output_dir]      Ingest math from OpenSALT")
         print("  ingest-standards validate [standards_dir]  Validate YAML schema")
-        print("  ingest-standards prompt <subject>       Print PDF extraction prompt")
+        print("  ingest-standards progressions [dir]        Generate domain progressions")
+        print("  ingest-standards prompt <subject>          Print PDF extraction prompt")
         print()
         print("Subjects: ela, science, social_studies")
         return
@@ -86,6 +95,9 @@ def main() -> None:
     if command == "ingest":
         output_dir = Path(sys.argv[2]) if len(sys.argv) > 2 else DEFAULT_OUTPUT
         cmd_ingest(output_dir)
+    elif command == "progressions":
+        standards_dir = Path(sys.argv[2]) if len(sys.argv) > 2 else DEFAULT_OUTPUT
+        cmd_progressions(standards_dir)
     elif command == "validate":
         standards_dir = Path(sys.argv[2]) if len(sys.argv) > 2 else DEFAULT_OUTPUT
         cmd_validate(standards_dir)
