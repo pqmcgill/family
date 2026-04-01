@@ -294,6 +294,7 @@ The `/family-edu` skill is functional for all 4 session types. The family can st
 
 ## Out of Scope (For Now)
 
+- **Printable standards + mastery overlay** — Generate a printer-friendly view of standards with coverage status overlaid (mastered, practiced, introduced, not started). Designed for Wife's analog workflow — a paper reference she can glance at to see where things stand without opening the CLI. Could be per-subject, per-grade, or a K-2 overview. Output as clean markdown or HTML that prints well.
 - **Curriculum crosswalk — Logic of English** — The family uses Logic of English Essentials A for ELA. If LoE publishes a scope & sequence or standards alignment, we could ingest it as a reference file and automatically map curriculum progress to Indiana ELA standards. This would mean "she finished Essentials A Lesson 15" updates coverage without manual activity-by-activity mapping. Check LoE's site for published alignments; if none exist, a manual crosswalk built from the table of contents is the fallback.
 - **Formal reporting** — generating reports for Indiana's annual homeschool assessment requirement. Deferred until we know if the family needs it. ([REQ: Open Questions — Reporting](REQUIREMENTS-EDU.md#open-questions))
 - **Multiple children** — Kid 2 will eventually need tracking. The schema supports it (separate coverage files) but the skill doesn't yet. ([REQ: Not In Scope](REQUIREMENTS-EDU.md#not-in-scope-for-now))
