@@ -493,6 +493,33 @@ Standards revisions are infrequent (5-7 year cycles per subject) and announced w
 - IDOE Standards: `https://www.in.gov/doe/students/indiana-academic-standards/`
 - State Board meetings: `https://www.in.gov/sboe/meetings/`
 
+## Scale Tracking and Search Infrastructure
+
+The current architecture (structured YAML + summary/progressions context + on-demand file reads) works because the corpus is small. The manifest tracks scale metrics to signal when search infrastructure (RAG, embeddings, or a local database) becomes worth the complexity.
+
+**Current scale (2026-03-31):**
+
+| Metric | Current | Notes |
+|--------|---------|-------|
+| Reference standards | 658 | 4 subjects × K-5. Slow-growing (new states/curricula only) |
+| Curricula crosswalks | 0 | Each curriculum alignment adds a mapping layer |
+| Children tracked | 0 | Each child multiplies coverage + activity data |
+| Coverage entries | 0 | Ceiling ~658 per child per year |
+| Activity log files | 0 | Unbounded. ~1-2 per week with regular use |
+| Est. tokens/session | ~3,000 | summary + progressions + 1-2 YAML reads |
+
+**Thresholds to watch:**
+
+| Trigger | Threshold | What it means |
+|---------|-----------|---------------|
+| Activity logs | >100 files | Searching history ("when did we last...") becomes expensive via brute-force reads |
+| Coverage entries | >500 per child | Full coverage scan for gap analysis burns significant tokens |
+| Children | >1 | Separate coverage files, cross-child comparisons |
+| Curricula | >2 crosswalks | Cross-referencing curriculum → standards → coverage is a multi-hop query |
+| Tokens/session | >10,000 | Agent is reading too much context; retrieval would reduce waste |
+
+When multiple thresholds are crossed, the migration path is: structured YAML → SQLite (indexed queries, joins) or embeddings (semantic search over activity history). The schema work done now (canonical IDs, validated structure, source provenance) transfers directly.
+
 ## Open Questions
 
 These need resolution before or during implementation:

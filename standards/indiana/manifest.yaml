@@ -47,6 +47,16 @@ standard_counts:
 
 total_standards: 658
 
+# Scale tracking — when these grow, consider search infrastructure (RAG/embeddings)
+# See DESIGN-EDU-STANDARDS.md for thresholds.
+scale:
+  reference_standards: 658        # total standards in YAML files
+  curricula_crosswalks: 0         # curriculum alignments (e.g., Logic of English)
+  children_tracked: 0             # separate coverage files
+  coverage_entries: 0             # standards with status in coverage.yaml
+  activity_log_files: 0           # files in activity-log/
+  est_tokens_per_session: 3000    # summary + progressions + ~1-2 YAML reads
+
 validation_results:
   math:
     automated_checks: pass
