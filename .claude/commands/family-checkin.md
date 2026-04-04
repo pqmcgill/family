@@ -20,7 +20,7 @@ Determine what day it is and tailor questions accordingly (e.g., skip homeschool
 
 Ask these one or two at a time, not all at once. Let the user respond before moving on.
 
-1. **Homeschool** _(school days only per schedule.yaml)_: "What subjects got done today?"
+1. **Homeschool** _(school days only per schedule.yaml)_: "Did homeschool happen today?"
 
 2. **Laundry**: Ask specific pipeline questions based on `current.yaml` state:
    - If a load has no stage: "Did you start [load name] today?"

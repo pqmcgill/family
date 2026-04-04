@@ -113,7 +113,7 @@ The tone is collaborative and forward-looking, not accusatory:
 ### Core Questions (Nightly)
 
 The system walks through each active domain, asking about:
-1. **Homeschool**: What subjects got done today? _(Only on school days)_
+1. **Homeschool**: Did homeschool happen today? _(Only on school days)_
 2. **Laundry**: Pipeline-specific questions based on current state
 3. **Meals**: Grocery trips, dinner prep notes (context-aware for busy evenings)
 4. **Decluttering**: Did it happen tonight?
