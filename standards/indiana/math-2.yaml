@@ -1,0 +1,148 @@
+subject: math
+grade: '2'
+version: '2023'
+source:
+  primary: opensalt
+  primary_url: https://opensalt.net/ims/case/v1p0/CFPackages/76673c2e-5cb6-11ee-a3bc-0242c0a84002
+  verified_against: IDOE PDF
+  last_verified: '2026-03-31'
+standard_count: 20
+domains:
+  CA:
+    name: Computation and Algebraic Thinking
+    learning_outcome: Within the numbers 1-100, students apply place value concepts
+      and addition and subtraction concepts to solve real-world problems and reason
+      about their strategies and solutions. Students explore effects of properties
+      of addition on solutions and investigate number patterns, and apply concepts
+      of addition and subtraction within 1,000.
+    standards:
+      2.CA.1:
+        description: Solve real-world problems involving addition and subtraction
+          within 100 in situations of adding to, taking from, putting together, taking
+          apart, and comparing, with unknowns in all parts of the addition or subtraction
+          problem (e.g., by using drawings and equations with a symbol for the unknown
+          number to represent the problem). Use estimation to decide whether answers
+          are reasonable in addition problems.
+        essential: true
+      2.CA.2:
+        description: Using number sense and place value strategies, add and subtract
+          within 1,000, including composing and decomposing tens and hundreds. Use
+          models, drawings, and strategies based on place value, properties of operations,
+          and/or the relationship between addition and subtraction; describe the strategy
+          and explain the reasoning used.
+        essential: false
+      2.CA.3:
+        description: Show that the order in which two numbers are added (commutative
+          property) and how the numbers are grouped in addition (associative property)
+          will not change the sum. These properties can be used to show that numbers
+          can be added in any order.
+        essential: true
+      2.CA.4:
+        description: Create, extend, and give an appropriate rule for number patterns
+          using addition and subtraction within 1,000.
+        essential: false
+  DA:
+    name: Data Analysis
+    learning_outcome: Students interact with a variety of data collection models and
+      evaluate mathematical relationships within the data using grade-level appropriate
+      strategies.
+    standards:
+      2.DA.1:
+        description: Collect, organize, and graph data from observations, surveys,
+          and investigations using scaled bar graphs and pictographs (limit scale
+          to 2s, 5s, 10s, and 100s); interpret mathematical relationships within the
+          data using grade-level addition, subtraction, and comparison strategies.
+        essential: true
+  G:
+    name: Geometry
+    learning_outcome: Students investigate and classify two- and three-dimensional
+      shapes based on faces, sides, and vertices, and investigate the results of composing
+      and decomposing each shape. Students continue to build foundational fraction
+      knowledge through specific partitioning and naming of rectangles and circles.
+    standards:
+      2.G.1:
+        description: Identify, describe, and classify two- and three-dimensional shapes
+          (i.e., triangle, square, rectangle, cube, right rectangular prism) according
+          to the number and shape of faces and the number of sides and/or vertices.
+          Draw two-dimensional shapes.
+        essential: false
+      2.G.2:
+        description: Investigate and predict the result of composing and decomposing
+          two- and three-dimensional shapes.
+        essential: false
+      2.G.3:
+        description: Partition a rectangle into rows and columns of same-size (unit)
+          squares and count to find the total number of same-size squares.
+        essential: false
+      2.G.4:
+        description: Partition circles and rectangles into two, three, or four equal
+          parts; describe the shares using the words halves, thirds, half of, a third
+          of, etc.; and describe the whole as two halves, three thirds, or four fourths.
+          Recognize that equal parts of identical wholes need not have the same shape.
+        essential: false
+  M:
+    name: Measurement
+    learning_outcome: Students use appropriate tools, computation strategies, and
+      relationships of measurement to solve real-world problems including measurements
+      of length and capacity, telling time to the nearest five minutes, and collections
+      of coins and dollars.
+    standards:
+      2.M.1:
+        description: Describe the relationships among an inch, foot, and yard. Describe
+          the relationship between a centimeter and meter.
+        essential: false
+      2.M.2:
+        description: Estimate and measure the length of an object by selecting and
+          using appropriate tools, such as rulers, yardsticks, meter sticks, and measuring
+          tapes to the nearest inch, foot, yard, centimeter, and meter.
+        essential: true
+      2.M.3:
+        description: Estimate and measure volume (capacity) using cups and pints.
+          Add and subtract to solve real-world problems involving capacities that
+          are given in the same units or obtained through investigations.
+        essential: true
+      2.M.4:
+        description: Tell and write time to the nearest five minutes from analog clocks,
+          using a.m. and p.m. Solve real-world problems involving addition and subtraction
+          of time intervals on the hour or half hour.
+        essential: true
+      2.M.5:
+        description: Describe relationships of time, including seconds in a minute;
+          minutes in an hour; hours in a day; days in a week; and days, weeks, and
+          months in a year.
+        essential: false
+      2.M.6:
+        description: Find the value of a collection of pennies, nickels, dimes, quarters,
+          and dollars.
+        essential: true
+  NS:
+    name: Number Sense
+    learning_outcome: Students fluently count, read, and represent numbers up to 1,000
+      using place value concepts.
+    standards:
+      2.NS.1:
+        description: Count by ones, twos, fives, tens, and hundreds up to at least
+          1,000 from any given number.
+        essential: true
+      2.NS.2:
+        description: Read and write whole numbers up to 1,000. Use words, models,
+          standard form, and expanded form to represent and show equivalent forms
+          of whole numbers up to 1,000.
+        essential: true
+      2.NS.3:
+        description: Determine whether a group of objects (up to 20) has an odd or
+          even number of members (e.g., by placing that number of objects in two groups
+          of the same size and recognizing that for even numbers no object will be
+          left over and for odd numbers one object will be left over, or by pairing
+          objects or counting them by twos).
+        essential: false
+      2.NS.4:
+        description: Define and model a "hundred" as a group of ten tens. Model place
+          value concepts of three-digit numbers, multiples of 100, and equivalent
+          forms of whole numbers using objects and drawings.
+        essential: true
+      2.NS.5:
+        description: Use place value understanding to compare two three-digit numbers
+          based on meanings of the hundreds, tens, and ones digits, using > , = ,
+          and < symbols to record the results of comparisons.
+        essential: true

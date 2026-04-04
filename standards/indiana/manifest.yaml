@@ -1,0 +1,72 @@
+schema_version: 1
+last_ingestion: '2026-03-31'
+
+sources_used:
+  math:
+    source: OpenSALT CASE API
+    verified_against: IDOE PDF
+  ela:
+    source: IDOE PDF
+  science:
+    source: IDOE PDF
+  social_studies:
+    source: IDOE PDF
+
+versions:
+- '2023'
+
+standard_counts:
+  math:
+    K: 15
+    '1': 15
+    '2': 20
+    '3': 24
+    '4': 25
+    '5': 23
+  ela:
+    K: 36
+    '1': 42
+    '2': 42
+    '3': 55
+    '4': 55
+    '5': 53
+  science:
+    K: 13
+    '1': 12
+    '2': 14
+    '3': 17
+    '4': 17
+    '5': 16
+  social_studies:
+    K: 14
+    '1': 21
+    '2': 23
+    '3': 29
+    '4': 37
+    '5': 40
+
+total_standards: 658
+
+# Scale tracking — when these grow, consider search infrastructure (RAG/embeddings)
+# See DESIGN-EDU-STANDARDS.md for thresholds.
+scale:
+  reference_standards: 658        # total standards in YAML files
+  curricula_crosswalks: 0         # curriculum alignments (e.g., Logic of English)
+  children_tracked: 0             # separate coverage files
+  coverage_entries: 0             # standards with status in coverage.yaml
+  activity_log_files: 0           # files in activity-log/
+  est_tokens_per_session: 3000    # summary + progressions + ~1-2 YAML reads
+
+validation_results:
+  math:
+    automated_checks: pass
+    pdf_cross_validation: pass
+  ela:
+    structural_check: pass
+    source: PDF extraction (Claude-assisted)
+  science:
+    structural_check: pass
+    source: PDF extraction (Claude-assisted)
+  social_studies:
+    structural_check: pass
+    source: PDF extraction (Claude-assisted)

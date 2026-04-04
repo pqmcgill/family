@@ -1,0 +1,129 @@
+subject: math
+grade: '1'
+version: '2023'
+source:
+  primary: opensalt
+  primary_url: https://opensalt.net/ims/case/v1p0/CFPackages/76673c2e-5cb6-11ee-a3bc-0242c0a84002
+  verified_against: IDOE PDF
+  last_verified: '2026-03-31'
+standard_count: 15
+domains:
+  CA:
+    name: Computation and Algebraic Thinking
+    learning_outcome: Within the numbers 1-20, students demonstrate fluency and apply
+      addition and subtraction strategies to solve real-world problems. Students apply
+      place value and number sense to add numbers within 100 and investigate beginning
+      algebra concepts through the growing number patterns within 100.
+    standards:
+      1.CA.1:
+        description: Demonstrate fluency with addition facts and the corresponding
+          subtraction facts within 20. Use strategies such as counting on; making
+          ten (e.g., 8 + 6 = 8 + 2 + 4 = 10 + 4 = 14); decomposing a number leading
+          to a 10 (e.g., 13 – 4 = 13 – 3 – 1 = 10 – 1 = 9); using the relationship
+          between addition and subtraction (e.g., knowing that 8 + 4 = 12, one knows
+          12 – 8 = 4); and creating equivalent but easier or known sums (e.g., adding
+          6 + 7 by creating the known equivalent 6 + 6 + 1 = 12 + 1 = 13). Model the
+          role of 0 and the equal sign in addition and subtraction using objects or
+          drawings.
+        essential: true
+      1.CA.2:
+        description: Solve real-world problems involving addition and subtraction
+          within 20 in situations of adding to, taking from, putting together, taking
+          apart, and comparing, with unknowns in all parts of the addition or subtraction
+          problem (e.g., by using objects, drawings, and equations with a symbol for
+          the unknown number to represent the problem).
+        essential: true
+      1.CA.3:
+        description: Using number sense and place value strategies, add within 100,
+          including adding a two-digit number and a one-digit number, and adding a
+          two-digit number and a multiple of 10. Use models or drawings and strategies
+          based on place value, properties of operations, and/or the relationship
+          between addition and subtraction; describe the strategy and explain the
+          reasoning used.
+        essential: true
+      1.CA.4:
+        description: Create, extend, and give an appropriate rule for number patterns
+          using addition within 100.
+        essential: false
+  DA:
+    name: Data Analysis
+    learning_outcome: Students collect, organize, and evaluate simple data using grade-level
+      appropriate strategies.
+    standards:
+      1.DA.1:
+        description: With guidance, collect data from a simple survey or collaborative
+          investigation; organize data into appropriate single-unit bar graphs, pictographs,
+          and/or tables and draw conclusions based on mathematical observations, comparisons,
+          and grade-level computation strategies.
+        essential: true
+  G:
+    name: Geometry
+    learning_outcome: Students make observations about a shape's defining attributes
+      and utilize them to classify, draw, and compose two-dimensional or three-dimensional
+      shapes. Students begin exploring fractional foundations through the partitioning
+      of rectangles and circles.
+    standards:
+      1.G.1:
+        description: Distinguish between defining attributes of two- and three-dimensional
+          shapes (e.g., triangles are closed and three-sided) versus non-defining
+          attributes (e.g., color, orientation, overall size). Create and draw two-dimensional
+          shapes with defining attributes.
+        essential: false
+      1.G.2:
+        description: Use two-dimensional shapes (e.g., rectangles, squares, trapezoids,
+          triangles, half-circles, quarter-circles) or three-dimensional shapes (e.g.,
+          cubes, right rectangular prisms, right circular cones, and right circular
+          cylinders) to create a composite shape, and compose new shapes from the
+          composite shape. [In grade 1, students do not need to learn formal names
+          such as "right rectangular prism."]
+        essential: false
+      1.G.3:
+        description: Partition circles and rectangles into two and four equal parts;
+          describe the parts using the words halves, fourths, and quarters; and use
+          the phrases half of, fourth of, and quarter of. Describe the whole as two
+          of, or four of, the parts. Understand for partitioning circles and rectangles
+          into two and four equal parts that decomposing into equal parts creates
+          smaller parts.
+        essential: false
+  M:
+    name: Measurement
+    learning_outcome: Using standard and non-standard measurements, students compare
+      and order objects, tell time to the hour and half-hour, and investigate beginning
+      concepts of money.
+    standards:
+      1.M.1:
+        description: Use direct comparison or a nonstandard unit to compare and order
+          objects according to length, area, capacity, weight, and temperature.
+        essential: true
+      1.M.2:
+        description: Tell and write time to the nearest half-hour and relate time
+          to events (before/after, shorter/longer) using analog clocks. Explain how
+          to read hours and minutes using digital clocks.
+        essential: true
+      1.M.3:
+        description: Identify the value of a penny, nickel, dime, and a collection
+          of pennies, nickels, and dimes.
+        essential: false
+  NS:
+    name: Number Sense
+    learning_outcome: Students fluently count, read, and represent numbers up to 120
+      and apply place value concepts to two-digit numbers.
+    standards:
+      1.NS.1:
+        description: Count to at least 120 by ones, fives, and tens from any given
+          number. In this range, read and write numerals and represent a number of
+          objects with a written numeral.
+        essential: true
+      1.NS.2:
+        description: Model place value concepts of two-digit numbers, multiples of
+          10, and equivalent forms of whole numbers using objects and drawings.
+        essential: true
+      1.NS.3:
+        description: Match the ordinal numbers (e.g., first, second, third) with an
+          ordered set of up to 20 items.
+        essential: false
+      1.NS.4:
+        description: Use place value understanding to compare two two-digit numbers
+          based on meanings of the tens and ones digits, recording the results of
+          comparisons with the symbols > , = , and <.
+        essential: true

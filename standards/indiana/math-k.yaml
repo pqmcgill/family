@@ -1,0 +1,110 @@
+subject: math
+grade: K
+version: '2023'
+source:
+  primary: opensalt
+  primary_url: https://opensalt.net/ims/case/v1p0/CFPackages/76673c2e-5cb6-11ee-a3bc-0242c0a84002
+  verified_against: IDOE PDF
+  last_verified: '2026-03-31'
+standard_count: 15
+domains:
+  CA:
+    name: Computation and Algebraic Thinking
+    learning_outcome: Within the numbers 1-10, students use objects and drawings to
+      model the composing (addition) and decomposing (subtraction) of numbers, and
+      solve real-world problems. Students investigate beginning algebra concepts through
+      simple repeating and growing patterns.
+    standards:
+      K.CA.1:
+        description: Solve real-world problems that involve addition and subtraction
+          within 10 using modeling with objects or drawings.
+        essential: true
+      K.CA.2:
+        description: Use objects or drawings to model the decomposition of numbers
+          less than 10 into pairs in more than one way. Identify corresponding equations.
+        essential: true
+      K.CA.3:
+        description: Find the number that makes 10 when added to the given number
+          for any number from 1 to 9 (e.g., by using objects or drawings), and record
+          the answer with a drawing or an equation.
+        essential: true
+      K.CA.4:
+        description: Create, extend, and give an appropriate rule for simple repeating
+          and growing patterns with numbers and shapes.
+        essential: false
+  DA:
+    name: Data Analysis
+    learning_outcome: Students begin interacting with data to create and interpret
+      data for patterns and comparison.
+    standards:
+      K.DA.1:
+        description: With guidance, collect and organize data into simple bar graphs,
+          pictographs, and/or tables to identify patterns and make comparisons.
+        essential: true
+  G:
+    name: Geometry
+    learning_outcome: Students investigate and compare two- and three-dimensional
+      shapes based on simple attributes.
+    standards:
+      K.G.1:
+        description: Compare two- and three-dimensional shapes in different sizes
+          and orientations, using informal language to describe their similarities,
+          differences, parts (e.g., number of sides and vertices/"corners"), and other
+          attributes (e.g., having sides of equal length).
+        essential: false
+  M:
+    name: Measurement
+    learning_outcome: Students investigate beginning concepts of length, weight, capacity,
+      temperature, and time through observations of direct comparisons.
+    standards:
+      K.M.1:
+        description: Make direct comparisons of the length, capacity, weight, and
+          temperature of objects, and identify which object is shorter, longer, taller,
+          lighter, heavier, warmer, cooler, or holds more.
+        essential: true
+      K.M.2:
+        description: 'Identify and use appropriate terms to describe intervals of
+          time including: morning, afternoon, evening, today, yesterday, tomorrow,
+          day, week, month, and year; describe how calendars and clocks are tools
+          to measure time.'
+        essential: false
+  NS:
+    name: Number Sense
+    learning_outcome: Students explore the foundations of numbers through counting
+      strategies, one-to-one correspondence, and place value of numbers up to 20.
+    standards:
+      K.NS.1:
+        description: Count to at least 100 by ones and tens. Count by one from any
+          given number.
+        essential: true
+      K.NS.2:
+        description: Write whole numbers from 0 to 20 and identify number words from
+          0 to 10. Represent a number of objects with a written numeral 0-20 (with
+          0 representing a count of no objects).
+        essential: true
+      K.NS.3:
+        description: Say the number names in standard order when counting objects,
+          pairing each object with one and only one number name and each number name
+          with one and only one object. Understand that the last number name said
+          describes the number of objects counted and that the number of objects is
+          the same regardless of their arrangement or the order in which they were
+          counted. Count out the number of objects, given a number from 1 to 20.
+        essential: true
+      K.NS.4:
+        description: Identify sets of 1 to 10 objects in patterned arrangements and
+          tell how many without counting.
+        essential: true
+      K.NS.5:
+        description: Identify whether the number of objects in one group is greater
+          than, less than, or equal to the number of objects in another group (e.g.,
+          by using matching and counting strategies).
+        essential: false
+      K.NS.6:
+        description: Compare the values of two numbers from 1 to 20 presented as written
+          numerals.
+        essential: false
+      K.NS.7:
+        description: Define and model a "ten" as a group of ten ones. Model equivalent
+          forms of whole numbers from 10 to 20 as groups of tens and ones using objects
+          and drawings.
+        essential: true
