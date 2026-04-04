@@ -1,0 +1,165 @@
+subject: math
+grade: '5'
+version: '2023'
+source:
+  primary: opensalt
+  primary_url: https://opensalt.net/ims/case/v1p0/CFPackages/76673c2e-5cb6-11ee-a3bc-0242c0a84002
+  verified_against: IDOE PDF
+  last_verified: '2026-03-31'
+standard_count: 23
+domains:
+  CA:
+    name: Computation and Algebraic Thinking
+    learning_outcome: Students apply concepts and strategies of multiplication and
+      division to solve real-world problems. Students add and subtract unlike fractions
+      and use visual fraction models to multiply and divide fractions and whole numbers.
+      Students apply conceptual models and strategies to all operations with decimals
+      to solve real-world problems and represent real-world situations within the
+      first quadrant of the coordinate plane.
+    standards:
+      5.CA.1:
+        description: Find whole-number quotients and remainders with up to four-digit
+          dividends and two-digit divisors using strategies based on place value,
+          the properties of operations, and/or the relationship between multiplication
+          and division. Describe the strategy and explain the reasoning used.
+        essential: true
+      5.CA.10:
+        description: Solve real-world problems involving addition, subtraction, multiplication,
+          and division with decimals to hundredths including problems that involve
+          money in decimal notation (e.g., by using equations, models or drawings,
+          and strategies based on place value or properties of operations to represent
+          the problem).
+        essential: true
+      5.CA.11:
+        description: Represent real-world problems and equations by graphing ordered
+          pairs in the first quadrant of the coordinate plane, and interpret coordinate
+          values of points in the context of the situation.
+        essential: false
+      5.CA.2:
+        description: Solve real-world problems involving multiplication and division
+          of whole numbers (e.g., by using equations to represent the problem). In
+          division problems that involve a remainder, explain how the remainder affects
+          the solution to the problem.
+        essential: true
+      5.CA.3:
+        description: Add and subtract fractions and mixed numbers with unlike denominators
+          using strategies or the standard algorithm.
+        essential: false
+      5.CA.4:
+        description: Solve real-world problems involving addition and subtraction
+          of fractions referring to the same whole, including cases of unlike denominators
+          (e.g., by using visual fraction models and equations to represent the problem).
+          Use benchmark fractions and number sense of fractions to estimate mentally
+          and assess whether the answer is reasonable.
+        essential: true
+      5.CA.5:
+        description: Use visual fraction models to multiply a fraction by a fraction
+          or a whole number.
+        essential: true
+      5.CA.6:
+        description: Use visual fraction models and numbers to divide a fraction by
+          a fraction or a whole number.
+        essential: true
+      5.CA.7:
+        description: Solve real-world problems involving multiplication of fractions,
+          including mixed numbers (e.g., by using visual fraction models and equations
+          to represent the problem).
+        essential: true
+      5.CA.8:
+        description: Solve real-world problems involving division of fractions and
+          mixed numbers (e.g., by using visual fraction models and equations to represent
+          the problem).
+        essential: true
+      5.CA.9:
+        description: Add, subtract, multiply, and divide decimals to hundredths, using
+          models or drawings and strategies based on place value or the properties
+          of operations. Describe the strategy and explain the reasoning.
+        essential: false
+  DA:
+    name: Data Analysis
+    learning_outcome: Students create questions appropriate to the data and answer
+      the questions using multiple representations.
+    standards:
+      5.DA.1:
+        description: Formulate questions that can be addressed with categorical and
+          numerical data and make predictions about the data. Collect, organize, and
+          graph data from observations, surveys, and experiments using line plots
+          with fractional intervals, histograms, or other graphical representations
+          that appropriately represent the data set.
+        essential: true
+      5.DA.2:
+        description: Calculate measures of central tendency (mean, median, and mode)
+          to describe a data set. Analyze data sets to determine which measure of
+          central tendency appropriately describes the distribution of data.
+        essential: true
+  G:
+    name: Geometry
+    learning_outcome: Students use appropriate tools to investigate attributes of
+      triangles and circles.
+    standards:
+      5.G.1:
+        description: Identify, describe, and draw triangles (right, acute, obtuse)
+          and circles using appropriate tools (e.g., ruler or straightedge, compass,
+          and technology). Define and model the relationship between radius and diameter.
+        essential: false
+  M:
+    name: Measurement
+    learning_outcome: Students investigate the volume of rectangular prisms and solve
+      real-world problems through the development and application of area formulas
+      for rectangles, triangles, parallelograms, and trapezoids. Students investigate
+      and convert measurements within the Customary and metric measurement systems.
+    standards:
+      5.M.1:
+        description: Convert among different-sized standard measurement units within
+          a given measurement system and use these conversions in solving multi-step,
+          real-world problems.
+        essential: false
+      5.M.2:
+        description: Find the area of a rectangle with fractional side lengths by
+          modeling with unit squares of the appropriate unit fraction side lengths,
+          and show that the area is the same as would be found by multiplying the
+          side lengths. Multiply fractional side lengths to find areas of rectangles,
+          and represent fraction products as rectangular areas.
+        essential: false
+      5.M.3:
+        description: Develop and use formulas for the area of triangles, parallelograms,
+          and trapezoids. Solve real-world and other mathematical problems that involve
+          perimeter and area of triangles, parallelograms, and trapezoids, using appropriate
+          units for measures.
+        essential: true
+      5.M.4:
+        description: Find the volume of a right rectangular prism with whole-number
+          side lengths by packing it with unit cubes, and show that the volume is
+          the same as would be found by multiplying the edge lengths or multiplying
+          the height by the area of the base.
+        essential: true
+      5.M.5:
+        description: Apply the formulas V = l × w × h and V = B × h for right rectangular
+          prisms to find volumes of right rectangular prisms with whole-number edge
+          lengths to solve real-world problems and other mathematical problems.
+        essential: true
+  NS:
+    name: Number Sense
+    learning_outcome: Students explore place value through representing powers of
+      10 as exponents, modeling percents as parts of 100, and comparing and ordering
+      fractions, mixed numbers, and decimals to the thousandth.
+    standards:
+      5.NS.1:
+        description: Use a number line to compare and order fractions, mixed numbers,
+          and decimals to thousandths. Write the results using > , = , and < symbols.
+        essential: true
+      5.NS.2:
+        description: Explain different interpretations of fractions, including as
+          parts of a whole, parts of a set, and division of whole numbers by whole
+          numbers.
+        essential: false
+      5.NS.3:
+        description: Explain patterns in the number of zeros of the product when multiplying
+          a number by powers of 10, and explain patterns in the placement of the decimal
+          point when a decimal is multiplied or divided by a power of 10. Use whole-number
+          exponents to denote powers of 10.
+        essential: false
+      5.NS.4:
+        description: Model percents as parts of 100 using pictures or diagrams and
+          identify the equivalent fraction.
+        essential: false
