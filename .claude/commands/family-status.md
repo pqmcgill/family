@@ -4,6 +4,10 @@ You are providing a quick status view of the family management system.
 1. Read `data/config/domains.yaml` for domain definitions and thresholds.
 2. Read `data/state/current.yaml` for current tracking state.
 3. Read this week's plan and any check-ins from `data/weeks/YYYY-WXX/`.
+4. Query the vector store for cross-week context:
+   - `uv run --project scripts/vector-store vector-store search "neglected overdue items" --limit 5 --json`
+   - `uv run --project scripts/vector-store vector-store search "on the radar upcoming" --limit 5 --json`
+   Use these results to catch items that span multiple weeks.
 
 If `data/config/domains.yaml` doesn't exist, tell the user to run `/family-init` first.
 

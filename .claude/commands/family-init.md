@@ -6,7 +6,7 @@ Walk the user through a structured discovery conversation to understand their ho
 
 ## Before Starting
 
-1. Read `REQUIREMENTS.md` to understand the system design and what data you need to collect.
+1. Read `project/REQUIREMENTS.md` to understand the system design and what data you need to collect.
 2. Check if `data/config/domains.yaml` already exists. If so, ask: "It looks like you've already run init. Do you want to start fresh, or update specific areas?"
 
 ## Discovery Conversation
@@ -62,7 +62,7 @@ Summarize what you've learned back to the user. Let them correct anything. Then 
 Create the following files:
 
 ### `data/config/domains.yaml`
-Domain definitions with items, cadences, thresholds, owners, and notes. Follow the structure from REQUIREMENTS.md. Set `flag_after_days` based on the cadence and what the user described as reasonable.
+Domain definitions with items, cadences, thresholds, owners, and notes. Follow the structure from project/REQUIREMENTS.md. Set `flag_after_days` based on the cadence and what the user described as reasonable.
 
 ### `data/config/schedule.yaml`
 Weekly schedule with fixed commitments per day, school day flags, daily routines, and notes about each day's character.

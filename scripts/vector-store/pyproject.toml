@@ -1,0 +1,25 @@
+[project]
+name = "vector-store"
+version = "0.1.0"
+description = "Semantic search over family management data via local embeddings and LanceDB"
+authors = [
+    { name = "pqmcgill", email = "pqmcgill@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "lancedb>=0.20.0",
+    "sentence-transformers>=3.0.0",
+    "pyyaml>=6.0",
+]
+
+[project.scripts]
+vector-store = "vector_store.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.10.12,<0.11.0"]
+build-backend = "uv_build"

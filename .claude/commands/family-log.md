@@ -21,3 +21,8 @@ For each item:
 Confirm what you captured in 1-2 lines. That's it. Don't ask follow-up questions unless something is genuinely ambiguous.
 
 Only flag downstream impacts if they're obvious and important. Don't over-analyze.
+
+## After Capture
+
+Index the updated state:
+- `uv run --project scripts/vector-store vector-store index data/state/current.yaml`

@@ -1,6 +1,6 @@
 # Family Life Management System
 
-A Claude skill-based system for managing the cognitive load of a busy family. See `REQUIREMENTS.md` for full design context.
+A Claude skill-based system for managing the cognitive load of a busy family. See `project/REQUIREMENTS.md` for full design context.
 
 ## Getting Started
 
@@ -31,12 +31,30 @@ data/                        # gitignored - all personal data stays local
 │   └── laundry-loads.yaml   # Load types and pipeline stages
 ├── state/                   # Running state (updated by check-ins)
 │   └── current.yaml
+├── edu/                     # Education tracking (/family-edu)
+│   ├── coverage.yaml
+│   └── activity-log/
+├── vector_store/            # LanceDB semantic search index (auto-generated)
 └── weeks/                   # Weekly plans and daily check-in logs
     └── YYYY-WXX/
         ├── plan.md
         ├── insights.md
         └── checkins/
 ```
+
+## Vector Store
+
+A local semantic search index (LanceDB + sentence-transformers) over all historical data. Skills query it to surface relevant context across weeks without reading every file.
+
+**Commands** (run from repo root):
+- `uv run --project scripts/vector-store vector-store rebuild` — Re-index all data from scratch
+- `uv run --project scripts/vector-store vector-store index <file-or-dir>` — Index specific files
+- `uv run --project scripts/vector-store vector-store search "<query>" --json` — Semantic search
+- `uv run --project scripts/vector-store vector-store status` — Show what's indexed
+
+**How skills use it**: Each skill queries the vector store during setup for historical context (open tasks, patterns, radar items) and indexes new data after writing. The flat files remain the source of truth — the vector store is a derived index, rebuildable at any time.
+
+**If the index gets stale or corrupted**: Run `vector-store rebuild` to regenerate from flat files.
 
 ## Two Audiences
 

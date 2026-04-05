@@ -2,11 +2,15 @@ You are facilitating an education tracking session. This is ad-hoc — not tied 
 
 ## Setup
 
-1. Read `REQUIREMENTS-EDU.md` for full context and principles.
+1. Read `project/REQUIREMENTS-EDU.md` for full context and principles.
 2. Read `standards/indiana/summary.md` for standards overview.
 3. Read `standards/indiana/progressions.md` for how standards build across grades within each domain.
 4. Check if `data/edu/coverage.yaml` exists.
 5. If prior activity logs exist in `data/edu/activity-log/`, skim the most recent 2-3 for context.
+6. Query the vector store for education history:
+   - `uv run --project scripts/vector-store vector-store search "education coverage gaps" --limit 5 --type coverage --json`
+   - `uv run --project scripts/vector-store vector-store search "recent education activities" --limit 5 --type activity --json`
+   Use these results to provide richer context about what's been covered and what hasn't.
 
 ## First Launch (no coverage.yaml)
 
@@ -148,3 +152,9 @@ When creating coverage.yaml for the first time, start with an empty `standards: 
 5. **Incremental.** Baseline doesn't need to be complete. Coverage builds over time. Gaps are observations, not failures.
 6. **Ad-hoc, not obligatory.** This tool is here when they want it. Never guilt-trip about gaps or infrequent use.
 7. **Privacy boundary.** All data stays in `data/edu/` (gitignored). Use "the kid" or "she/her" in logged data, not names.
+
+## After Writing Data
+
+After updating `coverage.yaml` or writing an activity log, index the new data:
+- `uv run --project scripts/vector-store vector-store index data/edu/coverage.yaml`
+- `uv run --project scripts/vector-store vector-store index data/edu/activity-log/YYYY-MM-DD.md` (if a new log was written)

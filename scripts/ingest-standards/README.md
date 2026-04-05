@@ -2,7 +2,7 @@
 
 Ingests Indiana Academic Standards from public sources, validates across sources, and emits structured YAML files.
 
-See [DESIGN-EDU-STANDARDS.md](../../DESIGN-EDU-STANDARDS.md) for architecture and [PLAN-EDU-STANDARDS.md](../../PLAN-EDU-STANDARDS.md) for implementation status.
+See [DESIGN-EDU-STANDARDS.md](../../project/DESIGN-EDU-STANDARDS.md) for architecture and [PLAN-EDU-STANDARDS.md](../../project/PLAN-EDU-STANDARDS.md) for implementation status.
 
 ## Setup
 
