@@ -9,7 +9,7 @@ You are facilitating an evening check-in. This should take ~5 minutes. The user 
 6. Query the vector store for historical context relevant to tonight's check-in:
    - `uv run --project scripts/vector-store vector-store search "open tasks not done" --limit 5 --json`
    - `uv run --project scripts/vector-store vector-store search "on the radar upcoming" --limit 5 --json`
-   Use these results to catch forgotten items and surface relevant history during the check-in.
+   After running these queries, briefly tell the user what you found: "From history: [1-2 sentence summary of relevant results]." If nothing useful came back, say so. This transparency lets the user judge whether the vector store is adding value.
 
 Use names and roles from the config files - adapt your language to this specific household.
 
@@ -38,11 +38,13 @@ Ask these one or two at a time, not all at once. Let the user respond before mov
 
 5. **Decluttering**: "Did you get to decluttering tonight?"
 
+6. **Mowing** _(seasonal, check domains.yaml)_: "Did mowing happen today?" Only ask if it's been a few days since last mowed or if the user mentioned planning to mow. Don't ask nightly — use judgment based on the flag_after_days threshold and weather/schedule context.
+
 6. **Personal time**: Ask about each person tracked in domains.yaml. Note quality: was it a full break or partial (e.g., nap window, errand that happened to be solo, multitasking)?
 
-7. **Bills/spending**: "Did the spending review happen tonight?"
+8. **Bills/spending**: "Did the spending review happen tonight?"
 
-8. **Variable/one-offs**: "Anything come up today, or anything change about the rest of the week?"
+9. **Variable/one-offs**: "Anything come up today, or anything change about the rest of the week?"
 
 ### After Collecting Answers
 

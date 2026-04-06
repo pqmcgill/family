@@ -7,7 +7,7 @@ You are providing a quick status view of the family management system.
 4. Query the vector store for cross-week context:
    - `uv run --project scripts/vector-store vector-store search "neglected overdue items" --limit 5 --json`
    - `uv run --project scripts/vector-store vector-store search "on the radar upcoming" --limit 5 --json`
-   Use these results to catch items that span multiple weeks.
+   After running these queries, briefly tell the user what you found: "From history: [1-2 sentence summary of relevant results]." If nothing useful came back, say so. This transparency lets the user judge whether the vector store is adding value.
 
 If `data/config/domains.yaml` doesn't exist, tell the user to run `/family-init` first.
 

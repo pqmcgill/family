@@ -10,7 +10,7 @@ You are facilitating an education tracking session. This is ad-hoc — not tied 
 6. Query the vector store for education history:
    - `uv run --project scripts/vector-store vector-store search "education coverage gaps" --limit 5 --type coverage --json`
    - `uv run --project scripts/vector-store vector-store search "recent education activities" --limit 5 --type activity --json`
-   Use these results to provide richer context about what's been covered and what hasn't.
+   After running these queries, briefly tell the user what you found: "From history: [1-2 sentence summary of relevant results]." If nothing useful came back, say so. This transparency lets the user judge whether the vector store is adding value.
 
 ## First Launch (no coverage.yaml)
 
