@@ -18,6 +18,19 @@ The system ingests public Indiana Academic Standards from IDOE PDFs and the Open
 
 **Next steps**: Build ingestion pipeline and adapters, parse K-2 standards, implement the `/family-edu` skill.
 
+### Parallel Insight Agents (`feature/parallel-insight-agents`)
+
+Planning and check-in skills now dispatch specialized subagents during setup to pre-analyze family data before the conversation begins. Inspired by the [review-assistant](https://github.com/ahardin13/review-assistant) project's parallel agent pattern.
+
+- **Planning**: 4 agents (cadence-analyzer, momentum-tracker, radar-scanner, history-miner) run in parallel
+- **Check-ins**: 2 agents (plan-delta, state-scanner) run in parallel
+- Each agent has explicit scope boundaries to prevent redundant findings
+- Architecture documented in REQUIREMENTS.md "Insight Agents" section
+
+**Status**: Implemented and tested. Agent scopes refined after initial testing showed significant cross-agent redundancy (resolved by adding scope constraints and dedup guidance). History-miner's value will increase as historical data accumulates — currently limited to ~2 weeks in the vector store.
+
+**Next steps**: Sustained real-world testing across multiple planning and check-in sessions. Watch for: gaps caused by overly strict scope boundaries, agent findings that don't inform the conversation, and latency impact of 4 parallel agent dispatches.
+
 ### UX Research Through Real-World Usage
 
 This system is in active daily use. The current priority is sustained real-world testing to understand what actually works — which questions are noise, which cadences are wrong, which domains need restructuring, and where the interaction model breaks down. Design changes are driven by lived experience, not speculation.
@@ -25,6 +38,8 @@ This system is in active daily use. The current priority is sustained real-world
 ### Data Architecture Evaluation
 
 The current flat-file approach (YAML + Markdown) optimizes for human readability and simplicity. As historical data accumulates, this may not scale well for the kind of pattern analysis and trend surfacing the system aspires to. A local indexed database (e.g., SQLite) could enable richer agent-driven insights across weeks and months of data. The plan is to let real usage reveal the pain points before committing to a migration.
+
+The insight agent architecture adds a new dimension to this evaluation: agents read flat files directly (momentum-tracker reads 2-3 weeks of raw check-ins) and the vector store (history-miner queries LanceDB). If flat-file reads become slow or token-expensive as data grows, that pressure will show up first in agent latency and context limits.
 
 ### Structured Tracking Data
 
@@ -52,7 +67,7 @@ The `/family-init` flow currently requires a fairly long discovery conversation.
 
 ### Multi-Week Trend Analysis
 
-The system currently operates on a weekly cycle with some cross-week awareness. Deeper longitudinal analysis (monthly patterns, seasonal shifts, long-term neglect trends) would make the weekly planning sessions significantly more insightful.
+Partially addressed by the insight agents: momentum-tracker analyzes 2-3 weeks of raw data for trends, and history-miner queries the full vector store for long-horizon patterns. As data accumulates, history-miner's value will grow — it can surface monthly patterns, seasonal shifts, and long-term neglect trends that momentum-tracker's short window can't see. The remaining gap is truly longitudinal analysis (6+ months of data) which will require both more historical data and potentially richer vector store queries or a structured database.
 
 ### Voice / Natural Language Input
 

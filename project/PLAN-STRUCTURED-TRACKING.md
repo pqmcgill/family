@@ -73,16 +73,13 @@ Each chunk gets metadata: `{source_file, date, type, domain}` for filtered searc
 
 ### Phase 3: Skill updates
 
-Update each skill to:
-1. **Query vector store** for context before generating output
-2. **Index new data** after writing
+**Updated**: Vector store querying is now handled by the `history-miner` insight agent, dispatched during `/family-plan` setup. Skills still index new data after writing.
 
-Priority order:
-- `family-checkin.md` — query for open tasks, recent patterns; index checkin log after write
-- `family-status.md` — query vector store instead of reading all historical files
-- `family-plan.md` — query for multi-week patterns, forgotten items; index plan after write
+- `family-plan.md` — history-miner agent queries vector store with context-aware searches; skill indexes plan after write
+- `family-checkin.md` — no direct vector store queries (plan-delta and state-scanner agents read flat files); skill indexes checkin log after write
+- `family-status.md` — could benefit from agent-based context gathering in the future
 - `family-log.md` — index after write
-- `family-edu.md` — query for coverage patterns; index after write
+- `family-edu.md` — index after write; could benefit from its own vector store queries for coverage patterns
 
 ### Phase 4: Documentation
 

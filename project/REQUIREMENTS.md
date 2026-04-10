@@ -182,6 +182,54 @@ Next 7 days with hard schedule constraints shown. Not a prescribed plan - just t
 - **Granularity is high-level.** "Do math" not "Do math workbook pages 12-14."
 - **Hard constraints are shown for planning context**, not because they aren't known.
 
+## Insight Agents
+
+Both `/family-plan` and `/family-checkin` dispatch specialized subagents during their setup phase to pre-analyze family data before the conversation begins. This separates analysis from interaction — each agent reasons deeply about one angle rather than the main conversation trying to notice everything while also running a Q&A.
+
+### Architecture
+
+```
+/family-plan or /family-checkin
+    ├── Phase 1: Read core config (needed for the conversation itself)
+    ├── Phase 2: Dispatch agents in parallel (each reads its own data)
+    ├── Phase 3: Aggregate findings, deduplicate, present briefing
+    └── Phase 4: Run conversation (informed by pre-analyzed findings)
+```
+
+### Agent Design Principles
+
+- **Scope boundaries prevent redundancy.** Each agent owns a distinct angle of analysis and explicitly does not report findings in other agents' territory. Cadence-analyzer owns threshold math. Momentum-tracker owns multi-week trends. Radar-scanner owns the forward calendar. History-miner owns long-horizon historical context. Overlap is handled by the aggregation phase, not by the agents themselves.
+- **Structured output contract.** All agents return findings in a consistent format: `domain, type, confidence, source, detail`. This makes aggregation and deduplication mechanical.
+- **Agents return text, not files.** Results flow back to the main conversation context. No session file persistence for now — the planning/check-in session is a single conversation.
+- **Lightweight models.** Agents use sonnet for speed. The analysis is structured computation and pattern matching, not creative reasoning.
+- **Graceful degradation.** Each agent handles edge cases (no historical data, vector store unavailable, sparse check-ins) by reporting what it can and noting limitations honestly.
+
+### Planning Agents (4, parallel)
+
+| Agent | Scope | Data Sources |
+|-------|-------|-------------|
+| **cadence-analyzer** | Current-state math: days since last done, threshold comparisons, pipeline status, overdue tasks | domains.yaml, laundry-loads.yaml, current.yaml |
+| **momentum-tracker** | Multi-week patterns: rolling tasks, consistency trends, schedule correlations, positive momentum | Last 2-3 weeks of plans + checkins |
+| **radar-scanner** | Forward-looking calendar: upcoming events, conflicts, prep needs, nudge windows, unresolved logistics | current.yaml (on_the_radar), schedule.yaml |
+| **history-miner** | Long-horizon context: patterns older than 3 weeks, seasonal signals, historical precedent for upcoming events | Vector store (all historical data) |
+
+### Check-in Agents (2, parallel)
+
+| Agent | Scope | Data Sources |
+|-------|-------|-------------|
+| **plan-delta** | Plan vs. actual: what's done, remaining, at risk for the current week | This week's plan.md + checkins |
+| **state-scanner** | Today-relevant items: which laundry pipeline questions to ask, approaching thresholds, schedule context | domains.yaml, laundry-loads.yaml, schedule.yaml, current.yaml |
+
+### Why Parallel Agents
+
+The previous approach loaded all files into a single context window and ran hardcoded vector store queries. The LLM then did ad-hoc analysis while simultaneously running the conversation. This produced shallow insights because nothing was pre-analyzed.
+
+With parallel agents:
+- **Deeper analysis.** Each agent focuses on one angle and can reason thoroughly about it.
+- **Better vector store usage.** History-miner formulates context-aware queries based on what's actually relevant this week, instead of running the same 3 generic queries every time.
+- **Domain-prioritized conversation.** The aggregated findings inform which domains to discuss first (most flagged) and what observations to lead with.
+- **Scalability.** Adding a new analysis angle means adding an agent file, not restructuring the conversation skill.
+
 ## Weekly Planning Session
 
 ### Format
@@ -189,17 +237,20 @@ Conversational Q&A. The system walks the tech partner through a structured set o
 
 ### Flow
 
-1. **Review last week** - Summary of what got done, what didn't, patterns. Discussion.
-2. **Variable events this week** - Unusual calendar items, schedule changes.
-3. **Domain walk-through** - System goes through each domain with context-aware suggestions.
-4. **Generate outputs** - Both views for caregiver, insights summary for tech partner.
-5. **Confirm and close** - Final adjustments before locking in.
+1. **Pre-analysis** - Insight agents run in parallel, producing structured findings.
+2. **Briefing** - Aggregated findings presented to the user before the conversation starts.
+3. **Review last week** - Summary of what got done, what didn't, patterns. Discussion.
+4. **Variable events this week** - Unusual calendar items, schedule changes.
+5. **Domain walk-through** - Domains ordered by agent-flagged priority. Each domain leads with pre-analyzed findings.
+6. **Generate outputs** - Both views for caregiver, insights summary for tech partner.
+7. **Confirm and close** - Final adjustments before locking in.
 
 ### Design Principles
 - **Cover all the bases** - No domain gets skipped in planning, even if the answer is "nothing this week."
 - **Rabbit holes welcome, but managed** - Deep dives are fine; system brings it back.
 - **Last week informs this week** - Neglect data and patterns feed into suggestions.
 - **Caregiver can participate or not** - Sometimes present, sometimes relayed.
+- **Findings as observations, not agent citations.** Present "Parents' bedding is 9 days overdue and the put-away stage has been the bottleneck," not "the cadence-analyzer found..."
 
 ## Data Model
 
