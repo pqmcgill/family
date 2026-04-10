@@ -1,15 +1,34 @@
 You are facilitating an evening check-in. This should take ~5 minutes. The user is tired - keep it focused.
 
 ## Setup
+
+### Phase 1: Read core context
 1. Read `project/REQUIREMENTS.md` for full context.
-2. Read all files in `data/config/` for domain definitions and schedule.
+2. Read all files in `data/config/` (domains.yaml, schedule.yaml, laundry-loads.yaml).
 3. Read `data/state/current.yaml` for current tracking state.
-4. Read this week's plan from `data/weeks/YYYY-WXX/plan.md` (determine current week).
-5. Read any prior check-ins from this week in `data/weeks/YYYY-WXX/checkins/`.
-6. Query the vector store for historical context relevant to tonight's check-in:
-   - `uv run --project scripts/vector-store vector-store search "open tasks not done" --limit 5 --json`
-   - `uv run --project scripts/vector-store vector-store search "on the radar upcoming" --limit 5 --json`
-   After running these queries, briefly tell the user what you found: "From history: [1-2 sentence summary of relevant results]." If nothing useful came back, say so. This transparency lets the user judge whether the vector store is adding value.
+
+### Phase 2: Dispatch insight agents
+Dispatch BOTH agents in parallel using the Agent tool — launch them in a single response so they run concurrently. Each agent has an instruction file in `.claude/agents/` — read the file first, then pass its contents as context in the agent prompt.
+
+For each agent below:
+1. Read the instruction file
+2. Dispatch a general-purpose Agent, including the instruction file contents and today's date in the prompt
+
+1. **plan-delta** — Read `.claude/agents/plan-delta.md`, then dispatch: `Agent(description="plan delta", prompt="<contents of plan-delta.md>\n\nToday's date: [TODAY'S DATE] ([DAY OF WEEK]). Execute these instructions and return structured findings.")`
+
+2. **state-scanner** — Read `.claude/agents/state-scanner.md`, then dispatch: `Agent(description="state scan", prompt="<contents of state-scanner.md>\n\nToday's date: [TODAY'S DATE] ([DAY OF WEEK]). Execute these instructions and return structured findings.")`
+
+### Phase 3: Use findings to tailor the check-in
+If both agents flagged the same item (e.g., a laundry load appears in both plan-delta and state-scanner), merge into one insight — don't present it twice.
+
+The agent findings tell you:
+- **Which laundry questions to ask** (from state-scanner's pipeline_action findings) — ask the exact right question for each load's current stage
+- **Which domains to focus on** (from state-scanner's today_relevant flags) — skip domains that aren't relevant today
+- **What's still on the plan** (from plan-delta) — use this for the remaining-week outlook at the end
+- **Approaching thresholds** (from state-scanner) — weave these into the conversation naturally, not as alerts
+
+Present a brief one-liner to the user before starting questions:
+> "Quick snapshot: [what's on track, what needs attention tonight]."
 
 Use names and roles from the config files - adapt your language to this specific household.
 

@@ -52,9 +52,31 @@ A local semantic search index (LanceDB + sentence-transformers) over all histori
 - `uv run --project scripts/vector-store vector-store search "<query>" --json` — Semantic search
 - `uv run --project scripts/vector-store vector-store status` — Show what's indexed
 
-**How skills use it**: Each skill queries the vector store during setup for historical context (open tasks, patterns, radar items) and indexes new data after writing. The flat files remain the source of truth — the vector store is a derived index, rebuildable at any time.
+**How skills use it**: The `history-miner` agent queries the vector store with targeted, context-aware searches during planning setup. Skills index new data after writing. The flat files remain the source of truth — the vector store is a derived index, rebuildable at any time.
 
 **If the index gets stale or corrupted**: Run `vector-store rebuild` to regenerate from flat files.
+
+## Insight Agents
+
+`/family-plan` and `/family-checkin` dispatch specialized subagents during their setup phase to pre-analyze family data before the conversation starts. This separates analysis from interaction — each agent reasons deeply about one angle rather than the main conversation trying to notice everything ad-hoc.
+
+### Planning agents (dispatched in parallel by `/family-plan`)
+
+| Agent | Purpose | Data sources |
+|-------|---------|-------------|
+| `cadence-analyzer` | Computes neglect status — days since last done vs. thresholds | domains.yaml, laundry-loads.yaml, current.yaml |
+| `momentum-tracker` | Multi-week patterns — rolling tasks, consistency trends | Last 2-3 weeks of plans + checkins |
+| `radar-scanner` | Forward-looking — upcoming events, conflicts, prep needs, nudge windows | current.yaml (on_the_radar), schedule.yaml |
+| `history-miner` | Targeted vector store queries based on current context | Vector store via CLI |
+
+### Check-in agents (dispatched in parallel by `/family-checkin`)
+
+| Agent | Purpose | Data sources |
+|-------|---------|-------------|
+| `plan-delta` | Plan vs. actual — what's done, remaining, at risk | This week's plan.md + checkins |
+| `state-scanner` | Today-relevant items — pipeline questions, approaching thresholds | domains.yaml, laundry-loads.yaml, schedule.yaml, current.yaml |
+
+Agent definitions live in `.claude/agents/`. All agents use `model: sonnet` for speed and return structured findings in a standard format. The main conversation aggregates findings into a briefing before starting user interaction.
 
 ## Two Audiences
 
