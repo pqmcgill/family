@@ -45,6 +45,8 @@ Ask these one or two at a time, not all at once. Let the user respond before mov
 
 1. **Kids**: "How were the kids today? Did Kid 2 nap?" — This is high-signal context that explains variance across other domains. Keep it brief but always ask.
 
+1a. **You both**: "And how are you two doing today?" — Ask about both Patrick *and* Wife: energy, mood, how they're feeling. Same high-signal context as the kids question — explains variance across domains and catches burnout early for either partner. Always ask, keep it brief. Capture both separately.
+
 2. **Homeschool** _(school days only per schedule.yaml)_: "Did homeschool happen today?"
 
 3. **Laundry**: Ask specific pipeline questions based on `current.yaml` state:
@@ -101,6 +103,10 @@ Write to `data/weeks/YYYY-WXX/checkins/DAY.md`:
 
 ## Kids
 - [How the kids were today, nap status, anything notable]
+
+## Parents
+- Patrick: [energy, mood, notable]
+- Wife: [energy, mood, notable]
 
 ## Homeschool
 - [what got done or "no school today"]
