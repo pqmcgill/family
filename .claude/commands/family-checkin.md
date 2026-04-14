@@ -57,7 +57,12 @@ Ask these one or two at a time, not all at once. Let the user respond before mov
 
 4. **Meals**: "Did groceries happen today?" _(+ context-aware notes from schedule.yaml)_. Also ask about dinner: "Did dinner go smoothly?" — note who cooked and whether timing was okay, especially on busy evenings (dance nights, late starts, etc.).
 
-5. **Decluttering**: "Did you get to decluttering tonight?"
+5. **Decluttering + outing prep**: "Did you get to decluttering tonight? Did the car get reset / bags prepped for tomorrow?" — These pair together as the evening routine. For outing prep, check ALL sources for what's coming up:
+   - **schedule.yaml** for tomorrow's fixed commitments (co-op, speech, nature club, dance, Girl Scouts)
+   - **on_the_radar** in current.yaml for upcoming one-off events (trips, appointments, special outings)
+   - **schedule_changes** in current.yaml for this week's modifications
+   
+   Prompt specifically based on what's coming: "Co-op tomorrow — lunch boxes packed, ice packs in the freezer?" or "Dentist trip Wednesday — snacks, entertainment, directions sorted?" For multi-day trips, prompt for packing a few days before and unpacking the day after return. Nightly cadence for now — on quiet nights just ask about car reset / general readiness.
 
 6. **Mowing** _(seasonal, check domains.yaml)_: "Did mowing happen today?" Only ask if it's been a few days since last mowed or if the user mentioned planning to mow. Don't ask nightly — use judgment based on the flag_after_days threshold and weather/schedule context.
 
@@ -118,8 +123,9 @@ Write to `data/weeks/YYYY-WXX/checkins/DAY.md`:
 - Groceries: [yes/no + details]
 - Dinner: [who cooked, timing, any notes]
 
-## Decluttering
-- [yes/no + notes]
+## Decluttering + Outing Prep
+- Decluttering: [yes/no + notes]
+- Outing prep: [car reset, bags prepped, what was done for tomorrow]
 
 ## Personal Time
 - [Person]: [full/partial/none + brief note]
