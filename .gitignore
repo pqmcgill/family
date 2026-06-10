@@ -1,0 +1,9 @@
+# personal data — never publish
+data/
+private/
+ritual.md
+
+# python
+__pycache__/
+*.pyc
+.DS_Store

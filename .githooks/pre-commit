@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#
+# Block private paths from ever being committed. These are gitignored,
+# but gitignore can be overridden with -f or a stray negation — this
+# hook is the backstop. Enable with: git config core.hooksPath .githooks
+
+set -euo pipefail
+
+BLOCKED=$(git diff --cached --name-only | grep -E '^(data/|private/|ritual\.md$)' || true)
+
+if [ -n "$BLOCKED" ]; then
+    echo "pre-commit: refusing to commit private paths:" >&2
+    echo "$BLOCKED" | sed 's/^/  /' >&2
+    echo "These contain personal family data and must never be published." >&2
+    exit 1
+fi
